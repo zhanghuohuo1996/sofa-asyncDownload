@@ -1,0 +1,92 @@
+{
+  "name": "sofa-print",
+  "version": "1.0.5",
+  "description": "react print component",
+  "main": "dist/bundle.js",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack --config webpack.config.prod.js",
+    "dev": "webpack-dev-server --open"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SFTC/sofa-print.git"
+  },
+  "keywords": [
+    "react",
+    "component",
+    "print"
+  ],
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/SFTC/sofa-print/issues"
+  },
+  "homepage": "https://github.com/SFTC/sofa-print#readme",
+  "dependencies": {
+    "babel-polyfill": "6.23.0",
+    "less": "^2.7.3",
+    "less-loader": "^4.1.0",
+    "react": "^16.7.0",
+    "react-dom": "^16.2.0",
+    "react-proptypes": "^1.0.0",
+    "react-to-print": "2.0.0-alpha-6",
+    "styled-components": "2.0.0"
+  },
+  "devDependencies": {
+    "babel-cli": "6.24.1",
+    "babel-core": "6.24.1",
+    "babel-eslint": "7.2.3",
+    "babel-loader": "7.1.0",
+    "babel-plugin-dynamic-import-node": "1.0.2",
+    "babel-plugin-react-intl": "2.3.1",
+    "babel-plugin-react-transform": "2.0.2",
+    "babel-plugin-styled-components": "1.1.4",
+    "babel-plugin-transform-es2015-modules-commonjs": "6.24.1",
+    "babel-plugin-transform-react-constant-elements": "6.23.0",
+    "babel-plugin-transform-react-inline-elements": "6.22.0",
+    "babel-plugin-transform-react-remove-prop-types": "0.4.5",
+    "babel-preset-env": "1.5.1",
+    "babel-preset-react": "6.24.1",
+    "babel-preset-stage-0": "6.24.1",
+    "copy-webpack-plugin": "^5.0.0",
+    "css-loader": "^2.1.0",
+    "html-webpack-plugin": "^3.2.0",
+    "mini-css-extract-plugin": "^0.5.0",
+    "style-loader": "^0.23.1",
+    "webpack": "^4.0.0",
+    "webpack-cli": "^3.2.3",
+    "webpack-dev-server": ">=3.1.11",
+    "webpack-node-externals": "^1.7.2"
+  },
+  "babel": {
+    "plugins": [
+      "styled-components"
+    ],
+    "presets": [
+      [
+        "env",
+        {
+          "modules": false
+        }
+      ],
+      "react",
+      "stage-0"
+    ],
+    "env": {
+      "production": {
+        "only": [
+          "src"
+        ],
+        "plugins": [
+          "transform-react-remove-prop-types",
+          "transform-react-constant-elements",
+          "transform-react-inline-elements"
+        ]
+      }
+    }
+  }
+}
