@@ -1,7 +1,5 @@
-import PrintPage from './printPage/index';
-import PageBreak from './pageBreak/index';
+import AsyncDownload from './AsyncDownload/index';
 
 export {
-  PrintPage,
-  PageBreak,
+  AsyncDownload,
 };

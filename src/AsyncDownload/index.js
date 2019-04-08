@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import ReactToPrint from "react-to-print";
+// import ReactToPrint from "react-to-print";
 import styled, { css }  from 'styled-components';
 import '../style.css';
 
@@ -50,7 +50,7 @@ const Button = styled.button`
   outline: none;
   margin-right: 10px;
 `;
-class PrintPage extends React.Component {
+class AsyncDownload extends React.Component {
 
   printMethod = () => {
     document.getElementById('sofa-print-button').click();
@@ -67,12 +67,13 @@ class PrintPage extends React.Component {
     const { previewStyle, pageWidth, showGoBackButton } = this.props;
     return (
       <div>
-        <ReactToPrint
+        dwewdw
+        {/* <ReactToPrint
           trigger={() => <a style={{ visibility: 'hidden' }} id="sofa-print-button" href="#"></a>}
           content={() => this.componentRef}
           onAfterPrint={this.props.onAfterPrint}
           onBeforePrint={this.props.onBeforePrint}
-        />
+        /> */}
         {previewStyle ?
           <PreviewBox pageWidth={pageWidth}>
             <ActionBar pageWidth={pageWidth}>
@@ -93,7 +94,7 @@ class PrintPage extends React.Component {
   }
 }
 
-PrintPage.propTypes = {
+AsyncDownload.propTypes = {
   previewStyle: PropTypes.bool,
   pageWidth: PropTypes.number,
   goBack: PropTypes.func,
@@ -101,7 +102,7 @@ PrintPage.propTypes = {
   onAfterPrint: PropTypes.func,
   showGoBackButton: PropTypes.bool,
 }
-PrintPage.defaultProps = {
+AsyncDownload.defaultProps = {
   previewStyle: false,
   pageWidth: 764,
   showGoBackButton: true,
@@ -110,4 +111,4 @@ PrintPage.defaultProps = {
   onAfterPrint: undefined,
 }
 
-export default PrintPage;
+export default AsyncDownload;

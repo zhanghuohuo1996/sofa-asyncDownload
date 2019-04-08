@@ -1,7 +1,7 @@
 {
-  "name": "sofa-print",
-  "version": "1.0.5",
-  "description": "react print component",
+  "name": "sofa-asyncdownload",
+  "version": "0.0.1",
+  "description": "react asyncDownload component",
   "main": "dist/bundle.js",
   "files": [
     "dist"
@@ -13,19 +13,19 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/SFTC/sofa-print.git"
+    "url": "git+https://github.com/zhanghuohuo1996/sofa-asyncDownload"
   },
   "keywords": [
     "react",
     "component",
-    "print"
+    "asyncDownload"
   ],
-  "author": "",
+  "author": "zhangning",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/SFTC/sofa-print/issues"
+    "url": "https://github.com/zhanghuohuo1996/sofa-asyncDownload/issues"
   },
-  "homepage": "https://github.com/SFTC/sofa-print#readme",
+  "homepage": "https://github.com/zhanghuohuo1996/sofa-asyncDownload",
   "dependencies": {
     "babel-polyfill": "6.23.0",
     "less": "^2.7.3",
@@ -33,7 +33,6 @@
     "react": "^16.7.0",
     "react-dom": "^16.2.0",
     "react-proptypes": "^1.0.0",
-    "react-to-print": "2.0.0-alpha-6",
     "styled-components": "2.0.0"
   },
   "devDependencies": {

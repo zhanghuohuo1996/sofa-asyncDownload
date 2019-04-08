@@ -91,12 +91,8 @@ module.exports =
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _printPage_index__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(1);
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "PrintPage", function() { return _printPage_index__WEBPACK_IMPORTED_MODULE_0__["default"]; });
-
-/* harmony import */ var _pageBreak_index__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(7);
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "PageBreak", function() { return _pageBreak_index__WEBPACK_IMPORTED_MODULE_1__["default"]; });
-
+/* harmony import */ var _AsyncDownload_index__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(1);
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "AsyncDownload", function() { return _AsyncDownload_index__WEBPACK_IMPORTED_MODULE_0__["default"]; });
 
 
 
@@ -112,12 +108,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(3);
 /* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var react_to_print__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(4);
-/* harmony import */ var react_to_print__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react_to_print__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(5);
-/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(styled_components__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(6);
-/* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_style_css__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(4);
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(styled_components__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(5);
+/* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_style_css__WEBPACK_IMPORTED_MODULE_3__);
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -128,41 +122,41 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 
 
+// import ReactToPrint from "react-to-print";
 
 
 
-
-var PreviewBox = styled_components__WEBPACK_IMPORTED_MODULE_3___default.a.div.withConfig({
-  displayName: 'printPage__PreviewBox'
+var PreviewBox = styled_components__WEBPACK_IMPORTED_MODULE_2___default.a.div.withConfig({
+  displayName: 'AsyncDownload__PreviewBox'
 })(['height: 100%;box-sizing: content-box;background-color: #f5f5f5;', ''], function (props) {
-  return props.pageWidth && Object(styled_components__WEBPACK_IMPORTED_MODULE_3__["css"])(['width: ', 'px;padding: 0 calc((100% - ', 'px)/2);'], props.pageWidth, props.pageWidth);
+  return props.pageWidth && Object(styled_components__WEBPACK_IMPORTED_MODULE_2__["css"])(['width: ', 'px;padding: 0 calc((100% - ', 'px)/2);'], props.pageWidth, props.pageWidth);
 });
 
-var ActionBar = styled_components__WEBPACK_IMPORTED_MODULE_3___default.a.div.withConfig({
-  displayName: 'printPage__ActionBar'
+var ActionBar = styled_components__WEBPACK_IMPORTED_MODULE_2___default.a.div.withConfig({
+  displayName: 'AsyncDownload__ActionBar'
 })(['', 'height: 50px;display: flex;justify-content: flex-end;align-items: center;position: fixed;z-index: 1;background: #f4f4f4;box-shadow: 0 3px 5px #ccc;'], function (props) {
-  return props.pageWidth && Object(styled_components__WEBPACK_IMPORTED_MODULE_3__["css"])(['width: ', 'px;'], props.pageWidth);
+  return props.pageWidth && Object(styled_components__WEBPACK_IMPORTED_MODULE_2__["css"])(['width: ', 'px;'], props.pageWidth);
 });
 
-var Button = styled_components__WEBPACK_IMPORTED_MODULE_3___default.a.button.withConfig({
-  displayName: 'printPage__Button'
+var Button = styled_components__WEBPACK_IMPORTED_MODULE_2___default.a.button.withConfig({
+  displayName: 'AsyncDownload__Button'
 })(['line-height: 1.2;display: inline-block;font-weight: 400;text-align: center;touch-action: manipulation;cursor: pointer;background-image: none;border: 1px solid transparent;white-space: nowrap;padding: 0 15px;font-size: 12px;border-radius: 4px;height: 28px;user-select: none;transition: all .3s cubic-bezier(.645,.045,.355,1);color: rgba(0,0,0,.65);background-color: #fff;border-color: #d9d9d9;outline: none;margin-right: 10px;']);
 
-var PrintPage = function (_React$Component) {
-  _inherits(PrintPage, _React$Component);
+var AsyncDownload = function (_React$Component) {
+  _inherits(AsyncDownload, _React$Component);
 
-  function PrintPage() {
+  function AsyncDownload() {
     var _ref;
 
     var _temp, _this, _ret;
 
-    _classCallCheck(this, PrintPage);
+    _classCallCheck(this, AsyncDownload);
 
     for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
       args[_key] = arguments[_key];
     }
 
-    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = PrintPage.__proto__ || Object.getPrototypeOf(PrintPage)).call.apply(_ref, [this].concat(args))), _this), _this.printMethod = function () {
+    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = AsyncDownload.__proto__ || Object.getPrototypeOf(AsyncDownload)).call.apply(_ref, [this].concat(args))), _this), _this.printMethod = function () {
       document.getElementById('sofa-print-button').click();
     }, _this.handlePrint = function () {
       _this.printMethod();
@@ -171,7 +165,7 @@ var PrintPage = function (_React$Component) {
     }, _temp), _possibleConstructorReturn(_this, _ret);
   }
 
-  _createClass(PrintPage, [{
+  _createClass(AsyncDownload, [{
     key: 'render',
     value: function render() {
       var _this2 = this;
@@ -184,16 +178,7 @@ var PrintPage = function (_React$Component) {
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(
         'div',
         null,
-        react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_to_print__WEBPACK_IMPORTED_MODULE_2___default.a, {
-          trigger: function trigger() {
-            return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement('a', { style: { visibility: 'hidden' }, id: 'sofa-print-button', href: '#' });
-          },
-          content: function content() {
-            return _this2.componentRef;
-          },
-          onAfterPrint: this.props.onAfterPrint,
-          onBeforePrint: this.props.onBeforePrint
-        }),
+        'dwewdw',
         previewStyle ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(
           PreviewBox,
           { pageWidth: pageWidth },
@@ -230,10 +215,10 @@ var PrintPage = function (_React$Component) {
     }
   }]);
 
-  return PrintPage;
+  return AsyncDownload;
 }(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component);
 
-PrintPage.propTypes = {
+AsyncDownload.propTypes = {
   previewStyle: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.bool,
   pageWidth: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.number,
   goBack: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.func,
@@ -241,7 +226,7 @@ PrintPage.propTypes = {
   onAfterPrint: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.func,
   showGoBackButton: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.bool
 };
-PrintPage.defaultProps = {
+AsyncDownload.defaultProps = {
   previewStyle: false,
   pageWidth: 764,
   showGoBackButton: true,
@@ -250,7 +235,7 @@ PrintPage.defaultProps = {
   onAfterPrint: undefined
 };
 
-/* harmony default export */ __webpack_exports__["default"] = (PrintPage);
+/* harmony default export */ __webpack_exports__["default"] = (AsyncDownload);
 
 /***/ }),
 /* 2 */
@@ -268,38 +253,13 @@ module.exports = require("prop-types");
 /* 4 */
 /***/ (function(module, exports) {
 
-module.exports = require("react-to-print");
-
-/***/ }),
-/* 5 */
-/***/ (function(module, exports) {
-
 module.exports = require("styled-components");
 
 /***/ }),
-/* 6 */
+/* 5 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // extracted by mini-css-extract-plugin
-
-/***/ }),
-/* 7 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(6);
-/* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_style_css__WEBPACK_IMPORTED_MODULE_1__);
-
-
-
-var PageBreak = function PageBreak() {
-  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement('div', { className: 'sofa-print-page-break' });
-};
-
-/* harmony default export */ __webpack_exports__["default"] = (PageBreak);
 
 /***/ })
 /******/ ]);

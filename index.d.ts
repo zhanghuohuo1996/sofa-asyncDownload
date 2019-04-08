@@ -4,39 +4,39 @@ import * as PropTypes from 'prop-types';
 /*~ This declaration specifies that the class constructor function
  *~ is the exported object from the file
  */
-export = sofaPrint
-declare module sofaPrint {
+export = sofaAsyncDownload
+declare module sofaAsyncDownload {
 
-  export function PageBreak(): React.ReactElement<any, any>;
+  export function PushTaskQueue(): React.ReactElement<any, any>;
 
-  export class PrintPage extends React.Component<PrintPage.PrintPageProps, any> {
+  export class AsyncDownload extends React.Component<AsyncDownload.AsyncDownloadProps, any> {
     static propTypes: {
-      previewStyle: PropTypes.Requireable<boolean>,
-      pageWidth: PropTypes.Requireable<number>,
-      goBack: PropTypes.Requireable<PrintPage.PrintCallbackFn>,
-      onBeforePrint: PropTypes.Requireable<PrintPage.PrintCallbackFn>,
-      onAfterPrint: PropTypes.Requireable<PrintPage.PrintCallbackFn>,
-      showGoBackButton: PropTypes.Requireable<boolean>,
+      // previewStyle: PropTypes.Requireable<boolean>,
+      // pageWidth: PropTypes.Requireable<number>,
+      // goBack: PropTypes.Requireable<AsyncDownload.PrintCallbackFn>,
+      // onBeforePrint: PropTypes.Requireable<AsyncDownload.PrintCallbackFn>,
+      // onAfterPrint: PropTypes.Requireable<AsyncDownload.PrintCallbackFn>,
+      // showGoBackButton: PropTypes.Requireable<boolean>,
     };
-    static defaultProps: Partial<PrintPage.PrintPageProps>;
+    static defaultProps: Partial<AsyncDownload.AsyncDownloadProps>;
     private componentRef;
 
-    printMethod(): () => void;
-    handlePrint(): () => void;
-    handleGoBack(): () => void;
+    // printMethod(): () => void;
+    // handlePrint(): () => void;
+    // handleGoBack(): () => void;
     render(): React.ReactElement<any, any>;
   }
 
-  namespace PrintPage {
+  namespace AsyncDownload {
     type PrintCallbackFn = () => void;
 
-    export interface PrintPageProps {
-      previewStyle: boolean,
-      pageWidth: number,
-      goBack: PrintCallbackFn,
-      showGoBackButton: boolean,
-      onBeforePrint?: PrintCallbackFn,
-      onAfterPrint?: PrintCallbackFn,
+    export interface AsyncDownloadProps {
+      // previewStyle: boolean,
+      // pageWidth: number,
+      // goBack: PrintCallbackFn,
+      // showGoBackButton: boolean,
+      // onBeforePrint?: PrintCallbackFn,
+      // onAfterPrint?: PrintCallbackFn,
     }
   }
 }
