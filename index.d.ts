@@ -4,8 +4,8 @@ import * as PropTypes from 'prop-types';
 /*~ This declaration specifies that the class constructor function
  *~ is the exported object from the file
  */
-export = sofaAsyncDownload
-declare module sofaAsyncDownload {
+export = SofaAsyncDownload;
+declare module SofaAsyncDownload {
 
   export function PushTaskQueue(): React.ReactElement<any, any>;
 
