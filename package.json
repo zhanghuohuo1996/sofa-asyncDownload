@@ -1,8 +1,9 @@
 {
   "name": "sofa-asyncdownload",
-  "version": "0.0.1",
+  "version": "0.0.9",
   "description": "react asyncDownload component",
   "main": "dist/bundle.js",
+  "tpes": "dist/index.d.ts",
   "files": [
     "dist"
   ],
@@ -27,6 +28,7 @@
   },
   "homepage": "https://github.com/zhanghuohuo1996/sofa-asyncDownload",
   "dependencies": {
+    "axios": "^0.18.0",
     "babel-polyfill": "6.23.0",
     "less": "^2.7.3",
     "less-loader": "^4.1.0",
