@@ -46,7 +46,7 @@ module.exports = {
     }),
     new webpack.HotModuleReplacementPlugin(), //热加载插件
     new CopyPlugin([
-      { from: 'index.d.ts', to: 'index.d.ts' },
+      { from: 'bundle.d.ts', to: 'bundle.d.ts' },
     ]),
   ]
 }

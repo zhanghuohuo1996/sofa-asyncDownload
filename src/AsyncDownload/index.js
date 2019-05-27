@@ -16,27 +16,36 @@ const styles = {
   },
   'waiting_download': {
     color: '#999',
+    display: 'flex',
+    height: '20px',
+    alignItems: 'center',
   },
   'download_link': {
     cursor: 'pointer',
+    display: 'flex',
+    height: '20px',
+    alignItems: 'center',
   },
   'display_content': {
     overflow: 'hidden',
     textOverflow: 'ellipsis',
     whiteSpace: 'nowrap',
+    display: 'flex',
+    height: '20px',
+    alignItems: 'center',
   }
 };
 const IconImage = styled.div`
-  background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMgAAADICAYAAACtWK6eAAAKRUlEQVR4Xu2dTah2ZRWG1ypNI40CiwKDHCjooKJMsCIMQmmQTtSJNvJrJqUFIYlFIUVEP9QwHfU58XOSDkJRFPEHVEIbGNSgoCCpoKikP2vJY491OH7ne8/e773fvc6zrnd69r73s657X7zn5332ceMFAQgcSMBhAwEIHEwAQbg7IHAKAgjC7QEBBOEegMA8AryDzOPGWUUIIEiRohlzHgEEmceNs4oQQJAiRTPmPAIIMo8bZxUhgCBFimbMeQQQZB43zipCAEGKFM2Y8wggyDxunFWEAIIUKZox5xFAkHncOKsIAQQRFh0RF5nZ24WRc6J+5+7PzzmRc15LAEGEd0VEnDCzq4WRc6JOuPu1c07kHARZ9B5AkEXxrhLOO4gQO4IIYSaJQhBhEQgihJkkCkGERSCIEGaSKAQRFoEgQphJohBEWASCCGEmiUIQYREIIoSZJApBhEUgiBBmkigEERaBIEKYSaIQRFgEgghhJolCEGERCCKEmSQKQYRFIIgQZpIoBBEWgSBCmEmiEERYBIIIYSaJQhBhEQgihJkkCkGERbBhSggzSRSCJCmCZeQkgCA5e2FVSQggSJIiWEZOAgiSsxdWlYQAgiQpgmXkJIAgOXthVUkIIEiSIlhGTgIIIuyFv4MIYSaJQhBhEfwlXQgzSRSCCItAECHMJFEIIiwCQYQwk0QhiLAIBBHCTBKFIMIiEEQIM0kUggiLQBAhzCRRCCIsAkGEMJNEIYiwCAQRwkwShSDCIhBECDNJFIIIi0AQIcwkUQgiLAJBhDCTRCGIsAgEEcJMEoUgwiIQRAgzSRSCCItAECHMJFEIIiwCQYQwk0QhiLAIBBHCTBKFIMIi2DAlhJkkCkGSFMEychJAkJy9sKokBBAkSREsIycBBMnZC6tKQgBBkhTBMnISQJCcvbCqJAQQJEkRLCMnAQQR9sLfQYQwk0QhiLAI/pIuhJkkCkGERSCIEGaSKAQRFoEgQphJohBEWASCCGEmiUIQYREIIoSZJApBhEUgiBBmkigEERaBIEKYSaIQRFgEgghhJolCEGERCCKEmSQKQYRFIIgQZpIoBBEWgSBCmEmiEERYBIIIYSaJQhBhEQgihJkkCkGERSCIEGaSKAQRFoEgQphJohBEWASCCGEmiUIQYREIIoSZJApBhEUgiBBmkigEERaBIEKYSaIQRFgEgghhJolCEGERCCKEmSQKQYRFIIgQZpIoBBEWgSBCmEmiEERYBIIIYSaJQhBhEQgihJkkCkGERSCIEGaSKAQRFoEgQphJohBEWASCCGEmiUIQYREIIoSZJApBhEUgiBBmkigEERaBIEKYSaIQRFgEgghhJolCEGERCCKEmSRqWEEi4gYzuyMJ59GXcczd7xxxyGEFaWVFxPfN7MYRi0s00/fc/bOJ1iNdyuiCtPkeMrOPSakR9iqB+83sE+4eoyIZWpD+LnK2mT1jZheMWuJKcz1vZpe4+4srXX8nlx1ekC7Ju83sJ2b21p1QHf8ifzSz97j7b0YftYQgXZIPmdkjZnb66KUuPN+/zOwyd39i4eukiC8jSJfkOjM7noL80V3E9e5+19Fd/rSVlxKkS/J1M7tlGiaO7gS+5u63VqJRTpAuyY/M7MpKRQtmvdfdrxLkHKmIqoKcaWZPmtn7jlRb6y32WTO71N3/vt4S1rlySUH6u8g7+m+23rkO+iNz1d+a2fvd/YUjs2LhQssK0iV5b38neaOQ6UhRf+vvHM+NNNSUWUoL0iX5pJm1n0nKs9h347S/jl/l7vdNuaFGO5ab4r+f2Wq/mbl9tHK3nOeL7t5+41f6hSC9/oi428yuKX03/H/44+7+KVjwbcX/7oGIeIOZPWZmHyx+Yzze/1L+UnEOr4zPO8ieuyAizum/2XpX0Zvj1/0zVn8qOv9rxkaQ/T+ZRlxoZk+Z2VnFbpK/9k/n/qzY3KccF0FOgiciLjezH5vZ64rcLP/p+zoeKDLvocdEkANQRcRNZvadQ5M82gd+xt3b7kte+wggyCluiYj4gZkdG/yuucPdPz34jLPHQ5BTC9K+xXpw4C27D5vZx929fYvF6yQEEGTDbRERo27Z/bmZXezuf8GMgwkgyCHujogYbctu2zLbPoD4q0OMX/oQBDlk/RHRtuw+amavP+QpWQ8rtWV22xIQZALBQR5GV2rL7IR6T3oogkwkGBHfMrPPTTwty+HfdPcvZFnMUVgHgkxsKSIas/ZHxCsmnrr24SW3zG4LHUFmEIyIN/WPo1w04/Q1TmkPeftAxS2z28JGkJkEI+Lc/sHGt82M2NVpv++/sRr+IW9LAEWQLahGxMX9I/JnbBGz5Kn/MLOPuHt79CqvGQQQZAa0vadExNVmdmLLmKVOv8bd71kqvEIugghajoivmNmXBFHKiC+7+1eVgRWzEETUerItuyfc/VrRaKVjEERUf6Itu0/3nzv+KRqtdAyCCOvvW3Z/amZrPYyubZltn7H6g3Cs0lEIIq4/ItZ6GB1bZsVdtjgEWQBqROz6YXRsmV2gRwRZCGqLjYj2madvLHiJvdGfd/dv7+hapS7DO8iCdUfED83s+gUv0aLZMrsgYARZEG5EnNb/7duHF7pMe8jbR9kyuxBdfgZZDuyryRHxlv6ZrfPEV/tl/40VD3kTg90bxzvIgnD3SHJ+/1fUbxZd7s99P/kvRHnEHEAAQXZ0a0TEZf0JKdtu2f13fxJJ+4+9vBYmgCALA94bL9qye8zd79zhsktfCkF2XH9EtCcY3jjzst9195tnnstpMwggyAxo25zSt+w+NONhdPf35+e2//zEa0cEEGRHoPd9qzX1YXRty+wl7v7iCsstfUkEWan+CQ+jY8vsSh21yyLIivD7w+jab6NOP2AZbJldsR8EWRl+u3xEXGdmxw9YCltmV+6Id5CVC+iStP8me8u+pdzu7rclWF7pJSBIkvojov2v9iv7cnjIW5JeECRJERFxppk92ZdzKQ95y1EMguTo4ZVV9IfRveTuLyRaVumlIEjp+hl+EwEE2USIr5cmgCCl62f4TQQQZBMhvl6aAIKUrp/hNxFAkE2E+HppAghSun6G30QAQTYR4uulCSBI6foZfhMBBNlEiK+XJoAgpetn+E0EdiJIf+TNprXwdQhMIuDuiz/6aFeC8KCBSdVz8GEIuPvi9+/iF2iDRgSCHKZxjplEAEEm4eLgagQQpFrjzDuJAIJMwsXB1QggSLXGmXcSAQSZhIuDqxFAkGqNM+8kAggyCRcHVyOAINUaZ95JBBBkEi4OrkYAQao1zryTCCDIJFwcXI0AglRrnHknEUCQSbg4uBoBBKnWOPNOIjCSIO1/hPOCgJTAMBumpFQIg8AOCexkw9QO5+FSEJASQBApTsJGI4AgozXKPFICCCLFSdhoBBBktEaZR0oAQaQ4CRuNAIKM1ijzSAkgiBQnYaMRQJDRGmUeKQEEkeIkbDQCCDJao8wjJYAgUpyEjUYAQUZrlHmkBBBEipOw0QggyGiNMo+UwMvAPtjn2Yv1LgAAAABJRU5ErkJggg==');
   width: 25px;
   height: 25px;
   display: inline-block;
   background-size: cover;
   cursor: pointer;
+  background-image: url('data:image/png;base64,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');
 `;
 const ListMdoal = styled.div`
   ::-webkit-scrollbar {
-    width: 0;
+    width: 3px;
   }
   max-height: 400px;
   min-height: 200px;
@@ -53,9 +62,11 @@ const ListItem = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  padding: 5px 10px 5px 15px;
+  padding: 0px 10px 0px 15px;
   // border-bottom: 1px solid #f0f0f0;
   color: #666;
+  height: 24px;
+  align-items: center;
 `;
 const BlankContainer = styled.div`
   width: 100%;
@@ -66,6 +77,9 @@ const BlankContainer = styled.div`
   color: #999;
 `;
 class AsyncDownload extends React.Component {
+  constructor(props) {
+    super(props);
+  }
   state = {
     showList: false,
     result: [],
@@ -90,111 +104,6 @@ class AsyncDownload extends React.Component {
     axios.get(url, baseUrl, {
       params,
     }).then((response) => {
-      response.data = {};
-      response.data.data = [{
-        'file_name': '运单导出什么测试长度',
-        'create_time': '2019-03-14',
-        'status': 2,
-        'donwload_template': 'baidu.com',
-      }, {
-        'file_name': '运单导出',
-        'create_time': '2019-03-14',
-        'status': 2,
-        'donwload_template': 'baidu.com',
-      }, {
-        'file_name': '运单导出',
-        'create_time': '2019-03-14',
-        'status': 2,
-        'donwload_template': 'baidu.com',
-      },{
-        'file_name': '运单导出',
-        'create_time': '2019-03-14',
-        'status': 2,
-        'donwload_template': 'baidu.com',
-      }, {
-        'file_name': '运单导出',
-        'create_time': '2019-03-14',
-        'status': 2,
-        'donwload_template': 'baidu.com',
-      },{
-        'file_name': '运单导出',
-        'create_time': '2019-03-14',
-        'status': 2,
-        'donwload_template': 'baidu.com',
-      }, {
-        'file_name': '运单导出',
-        'create_time': '2019-03-14',
-        'status': 2,
-        'donwload_template': 'baidu.com',
-      }, {
-        'file_name': '运单导出',
-        'create_time': '2019-03-14',
-        'status': 1,
-        'donwload_template': '',
-      }, {
-        'file_name': '运单导出',
-        'create_time': '2019-03-14',
-        'status': 0,
-        'donwload_template': '',
-      }, {
-        'file_name': '运单导出',
-        'create_time': '2019-03-14',
-        'status': 3,
-        'donwload_template': 'baidu.com',
-        'process': 100,
-      }, {
-        'file_name': '运单导出',
-        'create_time': '2019-03-14',
-        'status': 3,
-        'donwload_template': 'baidu.com',
-        'process': 100,
-      }, {
-        'file_name': '运单导出',
-        'create_time': '2019-03-14',
-        'status': 3,
-        'donwload_template': 'baidu.com',
-        'process': 100,
-      }, {
-        'file_name': '运单导出',
-        'create_time': '2019-03-14',
-        'status': 2,
-        'donwload_template': 'baidu.com',
-      }, {
-        'file_name': '运单导出',
-        'create_time': '2019-03-14',
-        'status': 3,
-        'donwload_template': 'baidu.com',
-        'process': 100,
-      }, {
-        'file_name': '运单导出',
-        'create_time': '2019-03-14',
-        'status': 2,
-        'donwload_template': 'baidu.com',
-      }, {
-        'file_name': '运单导出',
-        'create_time': '2019-03-14',
-        'status': 1,
-        'donwload_template': 'baidu.com',
-        'process': 80,
-      }, {
-        'file_name': '运单导出',
-        'create_time': '2019-03-14',
-        'status': 1,
-        'donwload_template': 'baidu.com',
-        'process': 50,
-      }, {
-        'file_name': '运单导出什么测试长度的的我',
-        'create_time': '2019-03-14',
-        'status': 1,
-        'donwload_template': 'baidu.com',
-        'process': 80,
-      }, {
-        'file_name': '运单长度的的我',
-        'create_time': '2019-03-14',
-        'status': 0,
-        'donwload_template': '',
-        'process': 0,
-      }];
       if (Array.isArray(response.data.data)) {
         const data = this.props.maxCount ? response.data.data.reverse().slice(0, this.props.maxCount) : response.data.data.reverse();
         this.setState({
@@ -222,7 +131,7 @@ class AsyncDownload extends React.Component {
     const length = Object.keys(this.props.statusMap || {}).length - 1;
     const completeKey = Object.keys(this.props.statusMap || {})[length];
     return (
-      <div style={{ position: 'relative' }}>
+      <div style={{ position: 'relative', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
         <IconImage id={this.props.downloadListId} onClick={() => this.handleClickIcon()}></IconImage>
         {
           this.state.showList ? (
@@ -255,7 +164,7 @@ class AsyncDownload extends React.Component {
 AsyncDownload.propTypes = {
   url: PropTypes.string.isRequired,
   fields: PropTypes.array.isRequired,
-  targetPathField: PropTypes.array.isRequired,
+  targetPathField: PropTypes.string.isRequired,
   successColor: PropTypes.string,
   width: PropTypes.number,
   urlParams: PropTypes.object,

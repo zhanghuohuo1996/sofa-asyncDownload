@@ -19,7 +19,7 @@ module.exports = {
       chunkFilename: "[id].css"
     }),
     new CopyPlugin([
-      { from: 'index.d.ts', to: 'index.d.ts' },
+      { from: 'bundle.d.ts', to: 'bundle.d.ts' },
     ]),
   ],
   module: {
